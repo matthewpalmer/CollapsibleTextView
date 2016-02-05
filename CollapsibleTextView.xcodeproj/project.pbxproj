@@ -7,38 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1A29C81C64906500003D98 /* Email-HTML in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A29C71C64906500003D98 /* Email-HTML */; };
+		0E1A29D11C64923A00003D98 /* CollapsibleTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E1A29D51C64923A00003D98 /* CollapsibleTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1A29CE1C64923A00003D98 /* CollapsibleTextView.framework */; };
+		0E1A29D61C64923A00003D98 /* CollapsibleTextView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1A29CE1C64923A00003D98 /* CollapsibleTextView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0E1A29DB1C64925200003D98 /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56701C63F863002D960E /* CollapsibleTextView.swift */; };
+		0E3D835D1C6436FD008EBF5A /* Email in Resources */ = {isa = PBXBuildFile; fileRef = 0E3D835C1C6436FD008EBF5A /* Email */; };
 		0E6F565F1C63F844002D960E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F565E1C63F844002D960E /* AppDelegate.swift */; };
 		0E6F56611C63F844002D960E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56601C63F844002D960E /* ViewController.swift */; };
 		0E6F56641C63F844002D960E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56621C63F844002D960E /* Main.storyboard */; };
 		0E6F56661C63F844002D960E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56651C63F844002D960E /* Assets.xcassets */; };
 		0E6F56691C63F844002D960E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56671C63F844002D960E /* LaunchScreen.storyboard */; };
+		0E6F56711C63F863002D960E /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56701C63F863002D960E /* CollapsibleTextView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E1A29D31C64923A00003D98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E6F56531C63F844002D960E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E1A29CD1C64923A00003D98;
+			remoteInfo = CollapsibleTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E1A29DA1C64923A00003D98 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E1A29D61C64923A00003D98 /* CollapsibleTextView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0E6F565B1C63F844002D960E /* CollapsibleTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollapsibleTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1A29C71C64906500003D98 /* Email-HTML */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Email-HTML"; sourceTree = "<group>"; };
+		0E1A29CE1C64923A00003D98 /* CollapsibleTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollapsibleTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleTextView.h; sourceTree = "<group>"; };
+		0E1A29D21C64923A00003D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3D835C1C6436FD008EBF5A /* Email */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Email; sourceTree = "<group>"; };
+		0E6F565B1C63F844002D960E /* CollapsibleTextViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollapsibleTextViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6F565E1C63F844002D960E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E6F56601C63F844002D960E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E6F56631C63F844002D960E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E6F56651C63F844002D960E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6F56681C63F844002D960E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6F566A1C63F844002D960E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6F56701C63F863002D960E /* CollapsibleTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E6F56581C63F844002D960E /* Frameworks */ = {
+		0E1A29CA1C64923A00003D98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0E6F56581C63F844002D960E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1A29D51C64923A00003D98 /* CollapsibleTextView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1A29CF1C64923A00003D98 /* CollapsibleTextView */ = {
+			isa = PBXGroup;
+			children = (
+				0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */,
+				0E6F56701C63F863002D960E /* CollapsibleTextView.swift */,
+				0E1A29D21C64923A00003D98 /* Info.plist */,
+			);
+			path = CollapsibleTextView;
+			sourceTree = "<group>";
+		};
 		0E6F56521C63F844002D960E = {
 			isa = PBXGroup;
 			children = (
-				0E6F565D1C63F844002D960E /* CollapsibleTextView */,
+				0E6F565D1C63F844002D960E /* CollapsibleTextViewDemo */,
+				0E1A29CF1C64923A00003D98 /* CollapsibleTextView */,
 				0E6F565C1C63F844002D960E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,34 +102,50 @@
 		0E6F565C1C63F844002D960E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E6F565B1C63F844002D960E /* CollapsibleTextView.app */,
+				0E6F565B1C63F844002D960E /* CollapsibleTextViewDemo.app */,
+				0E1A29CE1C64923A00003D98 /* CollapsibleTextView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0E6F565D1C63F844002D960E /* CollapsibleTextView */ = {
+		0E6F565D1C63F844002D960E /* CollapsibleTextViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				0E6F565E1C63F844002D960E /* AppDelegate.swift */,
 				0E6F56601C63F844002D960E /* ViewController.swift */,
+				0E3D835C1C6436FD008EBF5A /* Email */,
+				0E1A29C71C64906500003D98 /* Email-HTML */,
 				0E6F56621C63F844002D960E /* Main.storyboard */,
 				0E6F56651C63F844002D960E /* Assets.xcassets */,
 				0E6F56671C63F844002D960E /* LaunchScreen.storyboard */,
 				0E6F566A1C63F844002D960E /* Info.plist */,
 			);
+			name = CollapsibleTextViewDemo;
 			path = CollapsibleTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0E1A29CB1C64923A00003D98 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1A29D11C64923A00003D98 /* CollapsibleTextView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		0E6F565A1C63F844002D960E /* CollapsibleTextView */ = {
+		0E1A29CD1C64923A00003D98 /* CollapsibleTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E6F566D1C63F844002D960E /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */;
+			buildConfigurationList = 0E1A29D71C64923A00003D98 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */;
 			buildPhases = (
-				0E6F56571C63F844002D960E /* Sources */,
-				0E6F56581C63F844002D960E /* Frameworks */,
-				0E6F56591C63F844002D960E /* Resources */,
+				0E1A29C91C64923A00003D98 /* Sources */,
+				0E1A29CA1C64923A00003D98 /* Frameworks */,
+				0E1A29CB1C64923A00003D98 /* Headers */,
+				0E1A29CC1C64923A00003D98 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -81,7 +153,26 @@
 			);
 			name = CollapsibleTextView;
 			productName = CollapsibleTextView;
-			productReference = 0E6F565B1C63F844002D960E /* CollapsibleTextView.app */;
+			productReference = 0E1A29CE1C64923A00003D98 /* CollapsibleTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E6F565A1C63F844002D960E /* CollapsibleTextViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E6F566D1C63F844002D960E /* Build configuration list for PBXNativeTarget "CollapsibleTextViewDemo" */;
+			buildPhases = (
+				0E6F56571C63F844002D960E /* Sources */,
+				0E6F56581C63F844002D960E /* Frameworks */,
+				0E6F56591C63F844002D960E /* Resources */,
+				0E1A29DA1C64923A00003D98 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E1A29D41C64923A00003D98 /* PBXTargetDependency */,
+			);
+			name = CollapsibleTextViewDemo;
+			productName = CollapsibleTextView;
+			productReference = 0E6F565B1C63F844002D960E /* CollapsibleTextViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -94,6 +185,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Matthew Palmer";
 				TargetAttributes = {
+					0E1A29CD1C64923A00003D98 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					0E6F565A1C63F844002D960E = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -112,35 +206,62 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E6F565A1C63F844002D960E /* CollapsibleTextView */,
+				0E6F565A1C63F844002D960E /* CollapsibleTextViewDemo */,
+				0E1A29CD1C64923A00003D98 /* CollapsibleTextView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E1A29CC1C64923A00003D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E6F56591C63F844002D960E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E6F56691C63F844002D960E /* LaunchScreen.storyboard in Resources */,
+				0E1A29C81C64906500003D98 /* Email-HTML in Resources */,
 				0E6F56661C63F844002D960E /* Assets.xcassets in Resources */,
 				0E6F56641C63F844002D960E /* Main.storyboard in Resources */,
+				0E3D835D1C6436FD008EBF5A /* Email in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E1A29C91C64923A00003D98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1A29DB1C64925200003D98 /* CollapsibleTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E6F56571C63F844002D960E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E6F56611C63F844002D960E /* ViewController.swift in Sources */,
+				0E6F56711C63F863002D960E /* CollapsibleTextView.swift in Sources */,
 				0E6F565F1C63F844002D960E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E1A29D41C64923A00003D98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E1A29CD1C64923A00003D98 /* CollapsibleTextView */;
+			targetProxy = 0E1A29D31C64923A00003D98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E6F56621C63F844002D960E /* Main.storyboard */ = {
@@ -162,6 +283,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E1A29D81C64923A00003D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CollapsibleTextView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CollapsibleTextView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0E1A29D91C64923A00003D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CollapsibleTextView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CollapsibleTextView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0E6F566B1C63F844002D960E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CollapsibleTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CollapsibleTextView;
@@ -260,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CollapsibleTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CollapsibleTextView;
@@ -270,6 +431,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E1A29D71C64923A00003D98 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1A29D81C64923A00003D98 /* Debug */,
+				0E1A29D91C64923A00003D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0E6F56561C63F844002D960E /* Build configuration list for PBXProject "CollapsibleTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -279,13 +448,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E6F566D1C63F844002D960E /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */ = {
+		0E6F566D1C63F844002D960E /* Build configuration list for PBXNativeTarget "CollapsibleTextViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E6F566E1C63F844002D960E /* Debug */,
 				0E6F566F1C63F844002D960E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
