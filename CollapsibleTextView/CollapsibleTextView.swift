@@ -176,6 +176,9 @@ public class CollapsibleTextView: UIView, UITableViewDataSource, UITableViewDele
         var range: NSRange
     }
     
+    private var regions: [Region] = []
+    private var textString: String = ""
+    
     public unowned var dataSource: CollapsibleTextViewDataSource
     
     private lazy var tableView: UITableView = {
@@ -183,9 +186,6 @@ public class CollapsibleTextView: UIView, UITableViewDataSource, UITableViewDele
         return tableView
     }()
     
-    private var regions: [Region] = []
-    
-    private var textString: String = ""
     
     private let collapsedReuseIdentifier = "collapsedCell"
     private let expandedReuseIdentifier = "expandedCell"
