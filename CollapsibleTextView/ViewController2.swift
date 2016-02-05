@@ -39,7 +39,6 @@ class ViewController2: UIViewController, CollapsibleTextViewDataSourceForRegionV
     override func viewDidLoad() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
-        scrollView.backgroundColor = .cyanColor()
         
         let top = NSLayoutConstraint(item: scrollView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1, constant: 0)
         let left = NSLayoutConstraint(item: scrollView, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1, constant: 0)
@@ -51,8 +50,6 @@ class ViewController2: UIViewController, CollapsibleTextViewDataSourceForRegionV
         regionView.delegate = self
         regionView.dataSource = dataSource
         view.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.backgroundColor = .greenColor()
         
         scrollView.addSubview(regionView)
         

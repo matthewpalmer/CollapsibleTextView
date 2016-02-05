@@ -75,12 +75,9 @@ class RegionView: UIView {
         replacementView.hidden = true
         originalView.hidden = true
         
-        UIView.animateWithDuration(0.35, animations: { [unowned self] () -> Void in
-            self.stackView.insertArrangedSubview(replacementView, atIndex: index)
-            replacementView.hidden = false
-            self.stackView.removeArrangedSubview(originalView)
-        }) { [unowned self] (success) -> Void in
-            self.delegate?.regionView(self, didFinishReplacingRegionAtIndex: index)
-        }
+        self.stackView.insertArrangedSubview(replacementView, atIndex: index)
+        self.stackView.removeArrangedSubview(originalView)
+        replacementView.hidden = false
+        self.delegate?.regionView(self, didFinishReplacingRegionAtIndex: index)
     }
 }

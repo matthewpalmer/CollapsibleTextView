@@ -12,6 +12,90 @@ protocol CollapsibleTextViewDataSourceForRegionViewDelegate: class {
     func collapsibleTextViewDataSource(dataSource: CollapsibleTextViewDataSourceForRegionView, didChangeRegionAtIndex index: Int)
 }
 
+private class CollapsedRegionView: UIView {
+    lazy var expandIndicator: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        view.backgroundColor = .yellowColor()
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addSubview(expandIndicator)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private override func intrinsicContentSize() -> CGSize {
+        return expandIndicator.frame.size
+    }
+}
+
+private class ExpandedRegionView: UIView {
+    lazy var collapseIndicator: UIView = {
+        let view = UIView()
+        view.backgroundColor = .orangeColor()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var textView: UITextView = {
+        let textView = UITextView()
+        textView.userInteractionEnabled = false
+        textView.scrollEnabled = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .whiteColor()
+        return textView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        translatesAutoresizingMaskIntoConstraints = false
+
+        self.addSubview(textView)
+        self.addSubview(collapseIndicator)
+        
+        setupTextViewConstraints()
+        setupCollapseIndicatorConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private override func updateConstraints() {
+        super.updateConstraints()
+    }
+    
+    private override func intrinsicContentSize() -> CGSize {
+        let width = textView.intrinsicContentSize().width + collapseIndicator.frame.width
+        let height = textView.intrinsicContentSize().height + collapseIndicator.frame.height
+        return CGSize(width: width, height: height)
+    }
+    
+    private func setupTextViewConstraints() {
+        let top = NSLayoutConstraint(item: textView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: textView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: textView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: textView, attribute: .Height, relatedBy: .GreaterThanOrEqual, toItem: nil, attribute: .Height, multiplier: 1, constant: 10)
+        
+        addConstraints([top, left, right, height])
+    }
+    
+    private func setupCollapseIndicatorConstraints() {
+        let top = NSLayoutConstraint(item: collapseIndicator, attribute: .Top, relatedBy: .Equal, toItem: textView, attribute: .Bottom, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: collapseIndicator, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: collapseIndicator, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 10)
+        let width = NSLayoutConstraint(item: collapseIndicator, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: 50)
+        let height = NSLayoutConstraint(item: collapseIndicator, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 1, constant: 44)
+        
+        addConstraints([top, bottom, left, width, height])
+    }
+}
+
 class CollapsibleTextViewDataSourceForRegionView: NSObject, RegionViewDataSource {
     private enum State {
         case Expanded, Collapsed, Static
@@ -40,21 +124,44 @@ class CollapsibleTextViewDataSourceForRegionView: NSObject, RegionViewDataSource
     func regionView(regionView: RegionView, viewForRegionAtIndex index: Int) -> UIView {
         let region = regions[index]
         
+        if region.state == .Collapsed {
+            return collapsedRegionForIndex(index)
+        } else if region.state == .Expanded {
+            return expandedRegionForIndex(index)
+        } else {
+            return staticRegionForIndex(index)
+        }
+    }
+    
+    private func staticRegionForIndex(index: Int) -> UIView {
         let view = UITextView()
+        view.userInteractionEnabled = false
         view.scrollEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = textForRegion(regions[index])
+        return view
+    }
+    
+    private func expandedRegionForIndex(index: Int) -> UIView {
+        let view = ExpandedRegionView()
         
-        if region.state == .Collapsed {
-            view.text = ">>>"
-            view.backgroundColor = UIColor.groupTableViewBackgroundColor()
-            view.tag = index
-            let tapGesture = UITapGestureRecognizer(target: self, action: "didTapRegion:")
-            view.addGestureRecognizer(tapGesture)
-        } else {
-            view.text = textForRegion(region)
-            view.backgroundColor = UIColor(hue: CGFloat(0.1) * CGFloat(index), saturation: 1.0, brightness: 0.8, alpha: 1.0)
-        }
+        view.textView.text = textForRegion(regions[index])
         
+        view.collapseIndicator.tag = index
+        let tapGesture = UITapGestureRecognizer(target: self, action: "didTapRegion:")
+        view.collapseIndicator.addGestureRecognizer(tapGesture)
+        
+        return view
+    }
+    
+    private func collapsedRegionForIndex(index: Int) -> UIView {
+        let view = CollapsedRegionView()
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        view.expandIndicator.tag = index
+        let tapGesture = UITapGestureRecognizer(target: self, action: "didTapRegion:")
+        view.expandIndicator.addGestureRecognizer(tapGesture)
         return view
     }
     
