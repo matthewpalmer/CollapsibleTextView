@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller2-->
+        <!--View Controller-->
         <scene sceneID="yVh-Mz-Gj5">
             <objects>
-                <viewController id="tq9-50-Wlr" customClass="ViewController2" customModule="CollapsibleTextViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tq9-50-Wlr" customClass="ViewController" customModule="CollapsibleTextViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nnM-tR-pVY"/>
                         <viewControllerLayoutGuide type="bottom" id="Kpn-se-zRQ"/>

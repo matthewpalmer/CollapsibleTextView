@@ -9,19 +9,16 @@
 /* Begin PBXBuildFile section */
 		0E1A29C81C64906500003D98 /* Email-HTML in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A29C71C64906500003D98 /* Email-HTML */; };
 		0E1A29D11C64923A00003D98 /* CollapsibleTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E1A29DB1C64925200003D98 /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56701C63F863002D960E /* CollapsibleTextView.swift */; };
 		0E1A2A081C653F8600003D98 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A071C653F8600003D98 /* RegionView.swift */; };
-		0E1A2A0B1C65434B00003D98 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A091C65420700003D98 /* ViewController2.swift */; };
+		0E1A2A0B1C65434B00003D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A091C65420700003D98 /* ViewController.swift */; };
 		0E1A2A0C1C65437000003D98 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A071C653F8600003D98 /* RegionView.swift */; };
 		0E1A2A111C6554D000003D98 /* CollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A101C6554D000003D98 /* CollapsibleTextViewDataSource.swift */; };
 		0E1A2A121C6556C100003D98 /* CollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A101C6554D000003D98 /* CollapsibleTextViewDataSource.swift */; };
 		0E3D835D1C6436FD008EBF5A /* Email in Resources */ = {isa = PBXBuildFile; fileRef = 0E3D835C1C6436FD008EBF5A /* Email */; };
 		0E6F565F1C63F844002D960E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F565E1C63F844002D960E /* AppDelegate.swift */; };
-		0E6F56611C63F844002D960E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56601C63F844002D960E /* ViewController.swift */; };
 		0E6F56641C63F844002D960E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56621C63F844002D960E /* Main.storyboard */; };
 		0E6F56661C63F844002D960E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56651C63F844002D960E /* Assets.xcassets */; };
 		0E6F56691C63F844002D960E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F56671C63F844002D960E /* LaunchScreen.storyboard */; };
-		0E6F56711C63F863002D960E /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F56701C63F863002D960E /* CollapsibleTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,17 +27,15 @@
 		0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleTextView.h; sourceTree = "<group>"; };
 		0E1A29D21C64923A00003D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1A2A071C653F8600003D98 /* RegionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
-		0E1A2A091C65420700003D98 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		0E1A2A091C65420700003D98 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E1A2A101C6554D000003D98 /* CollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
 		0E3D835C1C6436FD008EBF5A /* Email */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Email; sourceTree = "<group>"; };
 		0E6F565B1C63F844002D960E /* CollapsibleTextViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollapsibleTextViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6F565E1C63F844002D960E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E6F56601C63F844002D960E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E6F56631C63F844002D960E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E6F56651C63F844002D960E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6F56681C63F844002D960E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6F566A1C63F844002D960E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E6F56701C63F863002D960E /* CollapsibleTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				0E1A29D01C64923A00003D98 /* CollapsibleTextView.h */,
-				0E6F56701C63F863002D960E /* CollapsibleTextView.swift */,
 				0E1A2A071C653F8600003D98 /* RegionView.swift */,
 				0E1A2A101C6554D000003D98 /* CollapsibleTextViewDataSource.swift */,
 				0E1A29D21C64923A00003D98 /* Info.plist */,
@@ -95,8 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6F565E1C63F844002D960E /* AppDelegate.swift */,
-				0E6F56601C63F844002D960E /* ViewController.swift */,
-				0E1A2A091C65420700003D98 /* ViewController2.swift */,
+				0E1A2A091C65420700003D98 /* ViewController.swift */,
 				0E3D835C1C6436FD008EBF5A /* Email */,
 				0E1A29C71C64906500003D98 /* Email-HTML */,
 				0E6F56621C63F844002D960E /* Main.storyboard */,
@@ -221,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1A29DB1C64925200003D98 /* CollapsibleTextView.swift in Sources */,
 				0E1A2A111C6554D000003D98 /* CollapsibleTextViewDataSource.swift in Sources */,
 				0E1A2A081C653F8600003D98 /* RegionView.swift in Sources */,
 			);
@@ -231,12 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6F56611C63F844002D960E /* ViewController.swift in Sources */,
 				0E1A2A121C6556C100003D98 /* CollapsibleTextViewDataSource.swift in Sources */,
-				0E6F56711C63F863002D960E /* CollapsibleTextView.swift in Sources */,
 				0E1A2A0C1C65437000003D98 /* RegionView.swift in Sources */,
 				0E6F565F1C63F844002D960E /* AppDelegate.swift in Sources */,
-				0E1A2A0B1C65434B00003D98 /* ViewController2.swift in Sources */,
+				0E1A2A0B1C65434B00003D98 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

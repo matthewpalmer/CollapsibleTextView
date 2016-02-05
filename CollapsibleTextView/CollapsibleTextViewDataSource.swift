@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol CollapsibleTextViewDataSourceForRegionViewDelegate: class {
-    func collapsibleTextViewDataSource(dataSource: CollapsibleTextViewDataSourceForRegionView, didChangeRegionAtIndex index: Int)
+protocol CollapsibleTextViewDataSourceDelegate: class {
+    func collapsibleTextViewDataSource(dataSource: CollapsibleTextViewDataSource, didChangeRegionAtIndex index: Int)
 }
 
 private class CollapsedRegionView: UIView {
@@ -96,7 +96,7 @@ private class ExpandedRegionView: UIView {
     }
 }
 
-class CollapsibleTextViewDataSourceForRegionView: NSObject, RegionViewDataSource {
+class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
     private enum State {
         case Expanded, Collapsed, Static
     }
@@ -109,7 +109,7 @@ class CollapsibleTextViewDataSourceForRegionView: NSObject, RegionViewDataSource
     private var regions: [Region] = []
     private var textString: String = ""
     
-    weak var delegate: CollapsibleTextViewDataSourceForRegionViewDelegate?
+    weak var delegate: CollapsibleTextViewDataSourceDelegate?
     
     init(text: String, initiallyCollapsedRegions: [NSRange]) {
         self.textString = text
