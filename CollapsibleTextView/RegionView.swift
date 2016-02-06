@@ -62,7 +62,7 @@ public class RegionView: UIView {
         addConstraints([top, left, right, bottom])
     }
     
-    func reloadData() {
+    public func reloadData() {
         guard let dataSource = dataSource else { return }
         
         stackView.subviews.forEach { $0.removeFromSuperview() }
