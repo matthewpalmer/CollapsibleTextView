@@ -20,7 +20,9 @@ public protocol RegionViewDelegate: class {
 public class RegionView: UIView {
     public weak var dataSource: RegionViewDataSource? {
         didSet {
-            reloadData()
+            if dataSource !== oldValue {
+                reloadData()
+            }
         }
     }
     

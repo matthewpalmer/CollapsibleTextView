@@ -102,8 +102,8 @@ public class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
     }
     
     public struct Region {
-        var state: State
-        var range: NSRange
+        public var state: State
+        public var range: NSRange
     }
     
     public var regions: [Region] = []
@@ -172,7 +172,7 @@ public class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
         delegate?.collapsibleTextViewDataSource(self, didChangeRegionAtIndex: index)
     }
     
-    private func textForRegion(region: Region) -> String {
+    public func textForRegion(region: Region) -> String {
         return (textString as NSString).substringWithRange(region.range)
     }
     
