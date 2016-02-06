@@ -8,23 +8,23 @@
 
 import UIKit
 
-protocol RegionViewDataSource: class {
+public protocol RegionViewDataSource: class {
     func numberOfRegionsInRegionView(regionView: RegionView) -> Int
     func regionView(regionView: RegionView, viewForRegionAtIndex: Int) -> UIView
 }
 
-protocol RegionViewDelegate: class {
+public protocol RegionViewDelegate: class {
     func regionView(regionView: RegionView, didFinishReplacingRegionAtIndex: Int)
 }
 
-class RegionView: UIView {
-    weak var dataSource: RegionViewDataSource? {
+public class RegionView: UIView {
+    public weak var dataSource: RegionViewDataSource? {
         didSet {
             reloadData()
         }
     }
     
-    weak var delegate: RegionViewDelegate?
+    public weak var delegate: RegionViewDelegate?
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -35,18 +35,23 @@ class RegionView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        postInit()
+    }
+    
+    public override class func requiresConstraintBasedLayout() -> Bool { return true }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(frame: CGRectZero)
+        postInit()
+    }
+    
+    private func postInit() {
         addSubview(stackView)
         translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    override class func requiresConstraintBasedLayout() -> Bool { return true }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func updateConstraints() {
+    public override func updateConstraints() {
         super.updateConstraints()
         
         let top = NSLayoutConstraint(item: stackView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0.0)
@@ -70,7 +75,7 @@ class RegionView: UIView {
     }
     
     // TODO: Allow customisation of animations.
-    func replaceRegionAtIndex(index: Int, withView replacementView: UIView) {
+    public func replaceRegionAtIndex(index: Int, withView replacementView: UIView) {
         let originalView = stackView.arrangedSubviews[index]
         replacementView.hidden = true
         originalView.hidden = true

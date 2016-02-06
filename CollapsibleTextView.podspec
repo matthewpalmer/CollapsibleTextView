@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/_matthewpalmer"
 
   s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   s.source       = { :git => "https://_matthewpalmer@bitbucket.org/_matthewpalmer/collapsibletextview.git", :tag => "0.0.1" }
   s.source_files  = "CollapsibleTextView", "CollapsibleTextView/**/*.{h,m,swift}"

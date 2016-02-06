@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CollapsibleTextViewDataSourceDelegate: class {
+public protocol CollapsibleTextViewDataSourceDelegate: class {
     func collapsibleTextViewDataSource(dataSource: CollapsibleTextViewDataSource, didChangeRegionAtIndex index: Int)
 }
 
@@ -96,56 +96,57 @@ private class ExpandedRegionView: UIView {
     }
 }
 
-class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
-    private enum State {
+public class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
+    public enum State {
         case Expanded, Collapsed, Static
     }
     
-    private struct Region {
+    public struct Region {
         var state: State
         var range: NSRange
     }
     
-    private var regions: [Region] = []
+    public var regions: [Region] = []
     private var textString: String = ""
     
-    weak var delegate: CollapsibleTextViewDataSourceDelegate?
+    public weak var delegate: CollapsibleTextViewDataSourceDelegate?
     
-    init(text: String, initiallyCollapsedRegions: [NSRange]) {
+    public init(text: String, initiallyCollapsedRegions: [NSRange]) {
         self.textString = text
         super.init()
         setRegions(initiallyCollapsedRegions)
     }
     
-    func numberOfRegionsInRegionView(regionView: RegionView) -> Int {
+    public func numberOfRegionsInRegionView(regionView: RegionView) -> Int {
         return regions.count
     }
     
-    func regionView(regionView: RegionView, viewForRegionAtIndex index: Int) -> UIView {
+    public func regionView(regionView: RegionView, viewForRegionAtIndex index: Int) -> UIView {
         let region = regions[index]
         
+        let text = textForRegion(region)
         if region.state == .Collapsed {
             return collapsedRegionForIndex(index)
         } else if region.state == .Expanded {
-            return expandedRegionForIndex(index)
+            return expandedRegionForIndex(index, text: text)
         } else {
-            return staticRegionForIndex(index)
+            return staticRegionForIndex(index, text: text)
         }
     }
     
-    private func staticRegionForIndex(index: Int) -> UIView {
+    public func staticRegionForIndex(index: Int, text: String) -> UIView {
         let view = UITextView()
         view.userInteractionEnabled = false
         view.scrollEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = textForRegion(regions[index])
+        view.text = text
         return view
     }
     
-    private func expandedRegionForIndex(index: Int) -> UIView {
+    public func expandedRegionForIndex(index: Int, text: String) -> UIView {
         let view = ExpandedRegionView()
         
-        view.textView.text = textForRegion(regions[index])
+        view.textView.text = text
         
         view.collapseIndicator.tag = index
         let tapGesture = UITapGestureRecognizer(target: self, action: "didTapRegion:")
@@ -154,7 +155,7 @@ class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
         return view
     }
     
-    private func collapsedRegionForIndex(index: Int) -> UIView {
+    public func collapsedRegionForIndex(index: Int) -> UIView {
         let view = CollapsedRegionView()
 
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -165,7 +166,7 @@ class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
         return view
     }
     
-    func didTapRegion(gesture: UITapGestureRecognizer) {
+    public func didTapRegion(gesture: UITapGestureRecognizer) {
         guard let index = gesture.view?.tag else { return }
         toggleRegionAtIndex(index)
         delegate?.collapsibleTextViewDataSource(self, didChangeRegionAtIndex: index)
@@ -209,6 +210,16 @@ class CollapsibleTextViewDataSource: NSObject, RegionViewDataSource {
                 let c = Region(state: .Collapsed, range: collapsedRegions[index])
                 regions.append(c)
                 lastCollapsedRegion = c
+                
+                // Only one region
+                if index == collapsedRegions.endIndex - 1 {
+                    let endOfPrevious = lastCollapsedRegion.range.location + lastCollapsedRegion.range.length
+                    let range = NSMakeRange(endOfPrevious, text.characters.count - endOfPrevious)
+                    if range.length > 0 {
+                        regions.append(Region(state: .Static, range: range))
+                    }
+                }
+                
                 continue
             }
             
