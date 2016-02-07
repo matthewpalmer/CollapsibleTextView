@@ -12,7 +12,7 @@ class RegionDataSource: CollapsibleTextViewDataSource {
     
 }
 
-class ViewController: UIViewController, CollapsibleTextViewDataSourceDelegate, RegionViewDelegate {
+class ViewController: UIViewController, CollapsibleTextViewDataSourceDelegate, RegionViewDelegate, UIPopoverPresentationControllerDelegate {
     let scrollView = UIScrollView()
     
     lazy var dataSource: RegionDataSource = {
@@ -75,5 +75,9 @@ class ViewController: UIViewController, CollapsibleTextViewDataSourceDelegate, R
     
     func regionView(regionView: RegionView, didFinishReplacingRegionAtIndex: Int) {
         scrollView.contentSize = regionView.frame.size
+    }
+    
+    func collapsibleTextViewDataSourceNeedsPopoverViewControllerPresented(view: UIView, sender: UIView) {
+        
     }
 }

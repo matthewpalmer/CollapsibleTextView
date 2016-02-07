@@ -10,6 +10,7 @@ import UIKit
 
 public protocol CollapsibleTextViewDataSourceDelegate: class {
     func collapsibleTextViewDataSource(dataSource: CollapsibleTextViewDataSource, didChangeRegionAtIndex index: Int)
+    func collapsibleTextViewDataSourceNeedsPopoverViewControllerPresented(view: UIView, sender: UIView)
 }
 
 private class CollapsedRegionView: UIView {
